@@ -1,0 +1,44 @@
+<section class="bg-secondary">
+    <div class=" container-fluid">
+        <div class="section ">
+
+            <div class="l-section col-3  bg-dark ">
+                <div class="search-bar p-3 ">
+                    <input type="text" class="my-2"
+                        style="text-decoration:none;width:100%;text-align:center;height:40px; border-radius:20px;border:2px solid rgb(71, 71, 71) ;"
+                        placeholder="search" name="search">
+                </div>
+                <a class="btn btn-dark my-2 " style="font-size: 30px; background-color:rgb(71, 71, 71);width:100%;"
+                    href="/user/add-journal" role="button">
+                    + new
+                </a>
+            </div>
+            <div class="r-section col-9 bg-light">
+                <form action="user/sort-date" method="post">
+                   
+                    <div class="date my-3">
+                        <input onchange='if(this.value != 0) { this.form.submit(); }' type="month" id="datePicker"
+                            name="date" min="2018-03" value="">
+                    </div>
+                </form>
+
+                <div class="data-list list-group">
+
+                    {{#each data}}
+                    <li class="list-group-items p-2 my-2">
+
+                        <div class="daily-title p-2 ">{{this.date}}</div>
+                        <div class="daily-desc p-2 ">"{{this.content}}"</div>
+
+                    </li>
+
+                    {{/each}}
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</section>
